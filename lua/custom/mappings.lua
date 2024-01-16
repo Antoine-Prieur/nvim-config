@@ -1,8 +1,14 @@
 -- Custom mappings
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('x', '<leader>p', '"_dP')
 
 -- switch between windows
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left', nowait = true, silent = true })
+
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right', nowait = true, silent = true })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Window down', nowait = true, silent = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Window up', nowait = true, silent = true })
@@ -51,6 +57,8 @@ vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>fG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = '[S]earch [B]uffers' })
+vim.keymap.set('n', '<leader>fs', require('telescope.builtin').lsp_document_symbols, { desc = '[S]earch [S]ymbols' })
 
 -- LSP keymaps
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[G]o to [D]eclaration' })

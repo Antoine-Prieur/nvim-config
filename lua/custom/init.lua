@@ -9,11 +9,7 @@ require('lazy').setup({
   'mg979/vim-visual-multi',
 
   -- UI
-  {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
-  },
+  'rebelot/kanagawa.nvim',
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },

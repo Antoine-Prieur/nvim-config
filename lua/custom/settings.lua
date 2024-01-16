@@ -1,5 +1,5 @@
 -- UI
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme 'kanagawa'
 
 -- Search settings
 vim.o.hlsearch = false
@@ -43,11 +43,11 @@ vim.o.timeoutlen = 300
 
 -- Scroll
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.opt.signcolumn = 'yes'
+vim.opt.isfname:append '@-@'
 
 -- Set width limit
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = '80'
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -66,9 +66,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim filetype
-vim.filetype.add({
-    extension = {
-        tf = "terraform",
-        tfstate = "json"
-    }
-})
+vim.filetype.add {
+  extension = {
+    tf = 'terraform',
+    tfstate = 'json',
+  },
+}
