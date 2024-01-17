@@ -8,10 +8,15 @@ vim.keymap.set('x', '<leader>p', '"_dP')
 
 -- switch between windows
 vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left', nowait = true, silent = true })
-
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right', nowait = true, silent = true })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Window down', nowait = true, silent = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Window up', nowait = true, silent = true })
+
+-- resize windows
+vim.keymap.set('n', '<A-h>', '<C-w><', { desc = 'Decrease width', nowait = true, silent = true })
+vim.keymap.set('n', '<A-l>', '<C-w>>', { desc = 'Increase width', nowait = true, silent = true })
+vim.keymap.set('n', '<A-j>', '<C-w>+', { desc = 'Increase height', nowait = true, silent = true })
+vim.keymap.set('n', '<A-k>', '<C-w>-', { desc = 'Decrease height', nowait = true, silent = true })
 
 -- tabulations
 vim.keymap.set('n', '<C-x>', '<Cmd>tabclose<CR>', { desc = 'Close tab', nowait = true, silent = true })
@@ -28,6 +33,9 @@ vim.keymap.set('n', '<leader>dN', vim.diagnostic.goto_prev, { desc = 'Go to prev
 vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- Terminal mode
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Escape terminal in terminal mode', nowait = true, silent = true })
 
 -- Telescope
 -- See `:help telescope.builtin`
