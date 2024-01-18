@@ -30,7 +30,7 @@ require('nvim-tree').setup {
     root_folder_label = false,
     highlight_git = false,
     highlight_diagnostics = true,
-    highlight_opened_files = 'none',
+    highlight_opened_files = 'name',
 
     indent_markers = {
       enable = false,
