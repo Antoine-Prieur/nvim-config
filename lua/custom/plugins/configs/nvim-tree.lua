@@ -29,6 +29,7 @@ require('nvim-tree').setup {
   renderer = {
     root_folder_label = false,
     highlight_git = false,
+    highlight_modified = 'icon',
     highlight_diagnostics = true,
     highlight_opened_files = 'name',
 
