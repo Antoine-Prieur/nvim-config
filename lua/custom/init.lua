@@ -32,6 +32,7 @@ require('lazy').setup({
 require 'custom.lsp'
 require 'custom.settings'
 require 'custom.mappings'
+require('lsp_signature').setup()
 
 -- Plugins config
 require 'custom.plugins.configs.telescope'
