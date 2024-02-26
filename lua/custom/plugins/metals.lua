@@ -56,7 +56,6 @@ return {
       map('n', '<leader>mw', function()
         require('metals').hover_worksheet()
       end)
-
     end
 
     return metals_config

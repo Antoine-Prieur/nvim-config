@@ -45,6 +45,24 @@ lspconfig.pyright.setup {
   filetypes = { 'python' },
   before_init = function(_, config_arg)
     config_arg.settings.python.pythonPath = get_python_path(config.root_dir)
+
+    -- Mypy --
+
+    local mypy = require('lint').linters.mypy
+
+    mypy.args = {
+      args = {
+        '--show-column-numbers',
+        '--show-error-end',
+        '--hide-error-codes',
+        '--hide-error-context',
+        '--no-color-output',
+        '--no-error-summary',
+        '--no-pretty',
+        '--python-executable',
+        get_python_path(config.root_dir),
+      },
+    }
   end,
   settings = {
     python = {
@@ -54,23 +72,5 @@ lspconfig.pyright.setup {
         useLibraryCodeForTypes = true,
       },
     },
-  },
-}
-
--- Mypy --
-
-local mypy = require('lint').linters.mypy
-
-mypy.args = {
-  args = {
-    '--show-column-numbers',
-    '--show-error-end',
-    '--hide-error-codes',
-    '--hide-error-context',
-    '--no-color-output',
-    '--no-error-summary',
-    '--no-pretty',
-    '--python-executable',
-    get_python_path(config.root_dir),
   },
 }

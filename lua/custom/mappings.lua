@@ -1,7 +1,7 @@
 -- Custom mappings
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', '<J>', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', '<K>', ":m '<-2<CR>gv=gv")
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('x', '<leader>p', '"_dP')
@@ -74,3 +74,8 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]o to [d]efinition
 vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP buf hover' })
 vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help, { desc = '[L]SP [S]ignature' })
 vim.keymap.set('n', '<leader>d', vim.lsp.buf.type_definition, { desc = '[G]o to [D]efinition' })
+
+-- DAP
+vim.keymap.set('n', '<F5>', function()
+  require('dap').continue()
+end)
